@@ -1,0 +1,23 @@
+from day_9_supports import logo
+import os
+print(logo)
+flag = True
+while flag:
+    print("\n Welcome to the secret auction program. \n")
+    name = input("Enter your name:  ")
+    bid_ammount = int(input("Enter your bid ammount: "))
+    data = {}
+    data[name] = bid_ammount
+    end = input("Are there any other bidders ? ") 
+    if end == 'yes':
+        os.system('cls')
+    else:
+        os.system('cls')
+        flag = False
+        highest_bid = 0
+for bidder in data:
+    bid_amt = data[bidder]
+    if bid_amt > highest_bid:
+        highest_bid = bid_amt
+        winner = bidder
+print(f"The winner is {winner} with the ammont of ${highest_bid}.")
